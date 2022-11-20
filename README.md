@@ -1,4 +1,4 @@
-# jhipsterSampleApplicationReact
+# jhipsterSampleApplicationReact Just for fun
 
 This application was generated using JHipster 5.7.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/vundefined](https://www.jhipster.tech/documentation-archive/vundefined).
 
