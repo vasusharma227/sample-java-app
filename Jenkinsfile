@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'aws-linux'
-    }
+    agent any
     stages {
         stage('Demo TEST') {
             steps {
