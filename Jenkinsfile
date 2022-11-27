@@ -4,6 +4,9 @@ pipeline {
         maven 'm3'
         jdk 'jdk8'
     }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3')) 
+    }
     environment {
         COMPANY_CODE='PRAGRA-123'
     }
@@ -22,6 +25,9 @@ pipeline {
     post {
         success {
             slackSend channel: 'devops-jan-2022', message: "Build for project ${JOB_NAME} is sucessfull"
+        }
+        always {
+            mail bcc: '', body: 'Hello Form Jenkins', cc: 'huzaifa.tin.edu@gmail.com', from: '', replyTo: '', subject: "Build Status for ${JOB_NAME} is ${JOB_STATUS}", to: 'atin@pragra.io'
         }
     }
 }
