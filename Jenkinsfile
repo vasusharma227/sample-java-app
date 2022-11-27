@@ -6,6 +6,11 @@ pipeline {
     }
     parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
 
+    triggers{
+        { pollSCM('H */4 * * 1-5') }
+        cron('H */4 * * 1-5') }
+    }
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '3')) 
     }
