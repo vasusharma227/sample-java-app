@@ -28,6 +28,14 @@ pipeline {
                sh 'mvn test'
            }
         }
+        stage('Dev Only') {
+            when{
+                 branch 'dev'
+            }
+            steps {
+                junit 'target/**/*.xml'
+            }
+        }
     }
     post {
         success {
