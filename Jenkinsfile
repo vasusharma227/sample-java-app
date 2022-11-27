@@ -4,6 +4,8 @@ pipeline {
         maven 'm3'
         jdk 'jdk8'
     }
+    parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '3')) 
     }
