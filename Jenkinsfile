@@ -18,6 +18,12 @@ pipeline {
         COMPANY_CODE='PRAGRA-123'
     }
     stages {
+         stage('Build') {
+      steps {
+        sh 'mvn -B -DskipTests clean package'
+      }
+    }
+  
         stage('Compile') {
             steps {
                 sh 'mvn compile'
