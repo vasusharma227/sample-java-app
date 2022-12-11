@@ -11,9 +11,7 @@ pipeline {
         cron('H */4 * * 1-5') 
     }
 
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '3')) 
-    }
+   
     environment {
         COMPANY_CODE='PRAGRA-123'
     }
