@@ -16,17 +16,17 @@ pipeline {
         COMPANY_CODE='PRAGRA-123'
     }
     stages {
-         stage('Build') {
-      steps {
-        sh 'mvn clean package'
-      }
-    }
+        // stage('Build') {
+      //steps {
+       // sh 'mvn clean package'
+      //}
+    //}
   
-        //stage('Compile') {
-           // steps {
-             //   sh 'mvn compile'
-           // }
-        //}
+        stage('Compile') {
+            steps {
+              sh 'mvn compile'
+            }
+        }
         stage('Test') {
            steps {
                sh 'mvn test'
